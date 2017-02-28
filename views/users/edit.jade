@@ -1,0 +1,86 @@
+extends ../_bootstrap
+
+append styles
+link(href='../css/blog.css', rel='stylesheet')
+block body
+	.blog-masthead
+		.container
+			h1.blog-title #{title}     #[a.btn.btn-lg.btn-primary(href="/users") Home]    #[a.btn.btn-lg.btn-primary(href="/users/new") New User]
+			nav.row
+					label User ID #{user.user_id_number}
+
+					form(action='/users/#{user._id}/edit',method='post',name='updateuser',enctype='application/x-www-form-urlencoded')
+					div.form-group
+							label  Name of the NGO :
+							input.form-control#inputNameOfNgo(type="text", value="#{user.nameOfNgo}", name="nameOfNgo")
+					div.form-group
+							label  Name of Inmate:
+							input.form-control#inputName(type='text', value='#{user.name}', name='name')
+					div.form-group
+							label  Cast :
+							input.form-control#inputCast(type="text", value="#{user.cast}", name="cast")
+					div.form-group
+							label Addmission Number:
+							input.form-control#inputUser_id_number(type="number", value="#{user.user_id_number}", name="user_id_number")
+					div.form-group
+							label Date of Addmission:
+							input.form-control#inputDoa(type="date",value="#{doa}",name="doa")
+					div.form-group
+							label DOB:
+							input.form-control#inputDob(type='date', value='#{dob}', name='dob')
+					div.form-group
+							label Gender:
+							input.form-control#inputGender(type='text', value='#{user.gender}', name='gender')
+					div.form-group
+							label Marital Status:
+							input.form-control#inputMaritalStatus(type="text", value="#{user.maritalStatus}", name ="maritalStatus")
+					div.form-group
+							label Address :
+							input.form-control#inputAddress(type="text", value="#{user.address}", name="address")
+					div.form-group
+							label Refered By Name:
+							input.form-control#inputReferedByName(type="text", value="#{user.referedByName}",name="referedByName")
+					div.form-group
+							label C/O :
+							input.form-control#inputCareOf(type="text",value="#{user.careOf}", name ="careOf")
+					div.form-group
+							label Number of Childrens:
+							input.form-control#inputNumberOfChildrens(type="number", value="#{user.numberOfChildrens}", name ="numberOfChildrens")
+					div.form-group
+							label Name of Childrens:
+							input.form-control#inputNameOfChildrens(type="text",value="#{user.nameOfChildrens}",name ="nameOfChildrens")
+					div.form-group
+							label Victims conditon:
+							input.form-control#inputVictimsConditon(type="text",value="#{user.victimsConditon}",  name ="victimsConditon")
+					div.form-group
+							label Belongings :
+							input.form-control#inputBelongings(type="text", value="#{user.belongings}", name ="belongings")
+					div.form-group
+							label Kit Provided :
+							input.form-control#inputKitProvided(type="text", value="#{user.kitProvided}",name ="kitProvided")
+					div.form-group
+							label Rehabitation Details :
+							input.form-control#inputRehabitationDetails(type="text", value="#{user.rehabitationDetails}", name ="rehabitationDetails")
+					div.form-group
+							label Date of Discharge :
+							input.form-control#inputDateOfDischarge(type="date", value="#{dateOfDischarge}", name ="dateOfDischarge")
+					div.form-group
+							label Handover to person name:
+							input.form-control#inputHandoverToPersonName(type="text", value="#{user.handoverToPersonName}", name ="handoverToPersonName")
+					div.form-group
+							label Handover to person photo :
+							input.form-control#inputGender(type="text", value="#{user.handoverToPersonPhoto}", name ="handoverToPersonPhoto")
+					div.form-group
+							label Remarks:
+							input.form-control#Remarks(type="text", value="#{user.remarks}" name ="remarks")
+					div.form-group
+							label Signatur Of Victiom:
+							input.form-control#inputSov(type="text", value="#{user.sov}",name ="sov")
+					div.form-group
+							label  Polise FIR:
+							input.form-control#inputPoliseFIR(type="text", value="#{user.poliseFIR}" , name ="poliseFIR")
+
+						label(type='hidden',value='PUT',name='_method')
+					div.form-group
+							button.btn.btn-primary#btnSubmit(type='submit').
+								Update

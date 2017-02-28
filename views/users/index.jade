@@ -1,0 +1,35 @@
+extends ../_bootstrap
+append styles
+
+	link(href='../css/blog.css', rel='stylesheet')
+block body
+	.blog-masthead
+		.container
+			h1.blog-title #{title}
+					dev.navbar-collapse.collapse
+						a.btn.btn-lg.btn-primary(href='/users/new') Add New User
+
+			table.table.table-bordered
+					thead
+						th Name
+						th Id
+						th DOB
+						th Gender
+						th Delete
+						th Edit
+						th Show
+					tbody
+					- each user, i in users
+						tr
+							td: = user.name
+							td: = user.user_id_number
+							td: = user.dob
+							td: = user.gender
+							form.blog-nav-item(action='/users/#{user._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+									input(type='hidden',value='DELETE',name='_method')
+							td: button.btn.btn-lg.btn-primary(type='submit').
+								Delete
+							td:	#[a.btn.btn-lg.btn-primary(href="/users/#{user._id}/edit") Edit]
+							td:	#[a.btn.btn-lg.btn-primary(href="/users/#{user._id}") Show]
+
+	block content
