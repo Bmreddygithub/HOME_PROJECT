@@ -160,7 +160,7 @@ router.route('/:id')
         console.log('GET Error: There was a problem retrieving: ' + err);
       } else {
         console.log('GET Retrieving ID: ' + user._id);
-        var dob = user.dob.toISOString();
+        var dob = (user.dob)?user.dob.toISOString():'';
         dob = dob.substring(0, dob.indexOf('T'))
         res.format({
           html: function(){
@@ -188,7 +188,7 @@ router.route('/:id/edit')
 	            //Return the user
               console.log('date: ' + user.dob);
 	            console.log('GET Retrieving ID: ' + user._id);
-              var dob = user.dob.toISOString();
+              var dob = (user.dob)?user.dob.toISOString():'';
               dob = dob.substring(0, dob.indexOf('T'));
 	            res.format({
 	                //HTML response will render the 'edit.jade' template
@@ -208,9 +208,10 @@ router.route('/:id/edit')
 	    });
 	})
 	//PUT to update a user by ID
-	.put(function(req, res) {
+	.post(function(req, res) {
 	    // Get our REST or form values. These rely on the "name" attributes
-      var nameOfNgo = req.body.nameOfNgo;
+      console.log(req);
+	  var nameOfNgo = req.body.nameOfNgo;
       var name = req.body.name;
       var cast = req.body.cast;
       var user_id_number = req.body.user_id_number;

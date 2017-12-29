@@ -9,7 +9,7 @@ block body
 			nav.row
 					label User ID #{user.user_id_number}
 
-					form(action='/users/#{user._id}/edit',method='post',name='updateuser',enctype='application/x-www-form-urlencoded')
+				form(action='/users/#{user._id}/edit',method='POST',name='updateuser',enctype='application/x-www-form-urlencoded')
 					div.form-group
 							label  Name of the NGO :
 							input.form-control#inputNameOfNgo(type="text", value="#{user.nameOfNgo}", name="nameOfNgo")
