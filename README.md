@@ -17,6 +17,9 @@ Google Cloud Command
 >gcloud app deploy
 >gcloud app browse
 
+App URL
+--------
+https://api-project-119863974999.appspot.com/users/5a480d4abd038b1c18bfae5f
 
 
 MISC details
