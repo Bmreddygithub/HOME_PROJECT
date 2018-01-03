@@ -192,12 +192,18 @@ router.route('/:id/edit')
 	            console.log('GET Retrieving ID: ' + user._id);
               var dob = (user.dob)?user.dob.toISOString():'';
               dob = dob.substring(0, dob.indexOf('T'));
+			  var doa = (user.doa)?user.doa.toISOString():'';
+              doa = doa.substring(0, doa.indexOf('T'));
+			  var dateOfDischarge = (user.dateOfDischarge)?user.dateOfDischarge.toISOString():'';
+              dateOfDischarge = dateOfDischarge.substring(0, dateOfDischarge.indexOf('T'));
 	            res.format({
 	                //HTML response will render the 'edit.jade' template
 	                html: function(){
 	                       res.render('users/edit', {
 	                          title: 'User:  ' + user.name,
                             "dob" : dob,
+							"doa" : doa,
+							"dateOfDischarge":dateOfDischarge,
 	                          "user" : user
 	                      });
 	                 },

@@ -5,7 +5,7 @@ block body
   .blog-masthead
     .container
 
-      h1.blog-title User Details  #[a.btn.btn-lg.btn-primary(href="/users/new") New User]    #[a.btn.btn-lg.btn-primary(href="/users") Home]  #[a.btn.btn-lg.btn-primary(href="/users/#{user._id}/edit") Edit]
+      h1.blog-title #[img.img-circle(src="../../images/home_logo.png" alt="UJJAWALA HOMES" )] User Details  #[a.btn.btn-lg.btn-primary(href="/users/new") New User]    #[a.btn.btn-lg.btn-primary(href="/users") Home]  #[a.btn.btn-lg.btn-primary(href="/users/#{user._id}/edit") Edit]
 
         div.jumbotron
           ul
@@ -14,6 +14,6 @@ block body
             li
               p.label.label-success User Id: #{user.user_id_number}
             li
-              p.label.label-success DOB: #{user.dob}
+              p.label.label-success DOB: #{user.dob.toDateString() }
             li
               p.label.label-success Gender: #{user.gender}

@@ -27,7 +27,7 @@ block body
 							tr
 								td: = user.name
 								td: = user.user_id_number
-								td: = user.dob
+								td: = user.dob.toDateString() 
 								td: = user.gender
 								td: form.blog-nav-item(action='/users/#{user._id}/edit', method='post', enctype='application/x-www-form-urlencoded')
 									input(type='hidden', value='DELETE', name='_method')

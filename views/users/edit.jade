@@ -5,82 +5,85 @@ link(href='../css/blog.css', rel='stylesheet')
 block body
 	.blog-masthead
 		.container
-			h1.blog-title #{title}     #[a.btn.btn-lg.btn-primary(href="/users") Home]    #[a.btn.btn-lg.btn-primary(href="/users/new") New User]
+			
 			nav.row
-					label User ID #{user.user_id_number}
+			img.img-circle(src="../../images/home_logo.png" alt="UJJAWALA HOMES" )
+			h1.blog-title #{title}     #[a.btn.btn-lg.btn-primary(href="/users" , style="margin-left:500px;") Home]   #[a.btn.btn-lg.btn-primary(href="/users/new") New User] 
+			br
+			label User ID #{user.user_id_number}
 
-				form(action='/users/#{user._id}/edit',method='POST',name='updateuser',enctype='application/x-www-form-urlencoded')
-					div.form-group
+			form(action='/users/#{user._id}/edit',method='POST',name='updateuser',enctype='application/x-www-form-urlencoded')
+					div.form-group.col-lg-3
 							label  Name of the NGO :
 							input.form-control#inputNameOfNgo(type="text", value="#{user.nameOfNgo}", name="nameOfNgo")
-					div.form-group
+					div.form-group.col-lg-3
 							label  Name of Inmate:
 							input.form-control#inputName(type='text', value='#{user.name}', name='name')
-					div.form-group
+					div.form-group.col-lg-3
 							label  Cast :
 							input.form-control#inputCast(type="text", value="#{user.cast}", name="cast")
-					div.form-group
+					div.form-group.col-lg-3
 							label Addmission Number:
 							input.form-control#inputUser_id_number(type="number", value="#{user.user_id_number}", name="user_id_number")
-					div.form-group
+					div.form-group.col-lg-3
 							label Date of Addmission:
 							input.form-control#inputDoa(type="date",value="#{doa}",name="doa")
-					div.form-group
+					div.form-group.col-lg-3
 							label DOB:
 							input.form-control#inputDob(type='date', value='#{dob}', name='dob')
-					div.form-group
+					div.form-group.col-lg-3
 							label Gender:
 							input.form-control#inputGender(type='text', value='#{user.gender}', name='gender')
-					div.form-group
+					div.form-group.col-lg-3
 							label Marital Status:
 							input.form-control#inputMaritalStatus(type="text", value="#{user.maritalStatus}", name ="maritalStatus")
-					div.form-group
+					div.form-group.col-lg-3
 							label Address :
 							input.form-control#inputAddress(type="text", value="#{user.address}", name="address")
-					div.form-group
+					div.form-group.col-lg-3
 							label Refered By Name:
 							input.form-control#inputReferedByName(type="text", value="#{user.referedByName}",name="referedByName")
-					div.form-group
+					div.form-group.col-lg-3
 							label C/O :
 							input.form-control#inputCareOf(type="text",value="#{user.careOf}", name ="careOf")
-					div.form-group
+					div.form-group.col-lg-3
 							label Number of Childrens:
 							input.form-control#inputNumberOfChildrens(type="number", value="#{user.numberOfChildrens}", name ="numberOfChildrens")
-					div.form-group
+					div.form-group.col-lg-3
 							label Name of Childrens:
 							input.form-control#inputNameOfChildrens(type="text",value="#{user.nameOfChildrens}",name ="nameOfChildrens")
-					div.form-group
+					div.form-group.col-lg-3
 							label Victims conditon:
 							input.form-control#inputVictimsConditon(type="text",value="#{user.victimsConditon}",  name ="victimsConditon")
-					div.form-group
+					div.form-group.col-lg-3
 							label Belongings :
 							input.form-control#inputBelongings(type="text", value="#{user.belongings}", name ="belongings")
-					div.form-group
+					div.form-group.col-lg-3
 							label Kit Provided :
 							input.form-control#inputKitProvided(type="text", value="#{user.kitProvided}",name ="kitProvided")
-					div.form-group
+					div.form-group.col-lg-3
 							label Rehabitation Details :
 							input.form-control#inputRehabitationDetails(type="text", value="#{user.rehabitationDetails}", name ="rehabitationDetails")
-					div.form-group
+					div.form-group.col-lg-3
 							label Date of Discharge :
 							input.form-control#inputDateOfDischarge(type="date", value="#{dateOfDischarge}", name ="dateOfDischarge")
-					div.form-group
+					div.form-group.col-lg-3
 							label Handover to person name:
 							input.form-control#inputHandoverToPersonName(type="text", value="#{user.handoverToPersonName}", name ="handoverToPersonName")
-					div.form-group
+					div.form-group.col-lg-3
 							label Handover to person photo :
 							input.form-control#inputGender(type="text", value="#{user.handoverToPersonPhoto}", name ="handoverToPersonPhoto")
-					div.form-group
+					div.form-group.col-lg-3
 							label Remarks:
 							input.form-control#Remarks(type="text", value="#{user.remarks}" name ="remarks")
-					div.form-group
+					div.form-group.col-lg-3
 							label Signatur Of Victiom:
 							input.form-control#inputSov(type="text", value="#{user.sov}",name ="sov")
-					div.form-group
+					div.form-group.col-lg-3
 							label  Polise FIR:
 							input.form-control#inputPoliseFIR(type="text", value="#{user.poliseFIR}" , name ="poliseFIR")
 
 						label(type='hidden',value='PUT',name='_method')
-					div.form-group
+					div.form-group.col-lg-3
 							button.btn.btn-primary#btnSubmit(type='submit').
 								Update
