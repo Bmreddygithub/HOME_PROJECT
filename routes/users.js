@@ -17,6 +17,7 @@ router.use(methodOverride(function(req, res){
 
 //get all users in this screen
 
+
 router.route('/')
     //GET all users
     .get(function(req, res, next) {
@@ -30,8 +31,9 @@ router.route('/')
                       //HTML response will render the index.jade file in the views/users folder. We are also setting "users" to be an accessible variable in our jade view
                     html: function(){
                         res.render('users/index', {
-                              title: 'All my users',
-                              "users" : users
+                              title: 'UJJAWALA HOMES',
+                              "users" : users,
+							  _src: 'images/home_logo.png'
                           });
                     },
                     //JSON response will show all users in JSON format

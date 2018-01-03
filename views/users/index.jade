@@ -5,31 +5,35 @@ append styles
 block body
 	.blog-masthead
 		.container
-			h1.blog-title #{title}
-					dev.navbar-collapse.collapse
-						a.btn.btn-lg.btn-primary(href='/users/new') Add New User
-
-			table.table.table-bordered
-					thead
-						th Name
-						th Id
-						th DOB
-						th Gender
-						th Delete
-						th Edit
-						th Show
-					tbody
-					- each user, i in users
-						tr
-							td: = user.name
-							td: = user.user_id_number
-							td: = user.dob
-							td: = user.gender
-							td: form.blog-nav-item(action='/users/#{user._id}/edit', method='post', enctype='application/x-www-form-urlencoded')
-								input(type='hidden', value='DELETE', name='_method')
-								button.btn.btn-lg.btn-primary(type='submit') Delete
-							td:	#[a.btn.btn-lg.btn-primary(href="/users/#{user._id}/edit") Edit]
-							td:	#[a.btn.btn-lg.btn-primary(href="/users/#{user._id}") Show]
+			//h1.blog-title #{title}
+			
+			dev.navbar-collapse.collapse
+				img.img-circle(src="images/home_logo.png" alt="UJJAWALA HOMES" )
+				a.btn.btn-lg.btn-primary(href='/users/new') Add New User
+				
+				
+			dev.navbar-collapse.collapse
+				table.table.table-bordered
+						thead
+							th Name
+							th Id
+							th DOB
+							th Gender
+							th Delete
+							th Edit
+							th Show
+						tbody
+						- each user, i in users
+							tr
+								td: = user.name
+								td: = user.user_id_number
+								td: = user.dob
+								td: = user.gender
+								td: form.blog-nav-item(action='/users/#{user._id}/edit', method='post', enctype='application/x-www-form-urlencoded')
+									input(type='hidden', value='DELETE', name='_method')
+									button.btn.btn-lg.btn-primary(type='submit') Delete
+								td:	#[a.btn.btn-lg.btn-primary(href="/users/#{user._id}/edit") Edit]
+								td:	#[a.btn.btn-lg.btn-primary(href="/users/#{user._id}") Show]
 
 	block content
 
