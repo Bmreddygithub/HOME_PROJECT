@@ -22,7 +22,7 @@ router.route('/')
     //GET all users
     .get(function(req, res, next) {
         //retrieve all users from Monogo
-        mongoose.model('users').find({}, function (err, users) {
+		mongoose.model('users').find({}, function (err, users) {
               if (err) {
                   return console.error(err);
               } else {
@@ -70,7 +70,7 @@ router.route('/')
         var remarks = req.body.remarks;
         var sov = req.body.sov;
         var poliseFIR=req.body.poliseFIR;
-        //call the create function for our database
+		//call the create function for our database
         mongoose.model('users').create({
               nameOfNgo : nameOfNgo,
               name : name,
@@ -97,7 +97,9 @@ router.route('/')
               poliseFIR:poliseFIR
         }, function (err, users) {
               if (err) {
+				  console.log(err);
                   res.send("There was a problem adding the information to the database.");
+				  
               } else {
                   //User has been created
                   console.log('POST creating new user: ' + users);
