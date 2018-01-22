@@ -1,5 +1,13 @@
-extends layout
+extends _bootstrap
 
-block content
-  h1= title
-  p Welcome to #{title}
+append styles
+link(href='css/blog.css', rel='stylesheet')
+block body
+  .blog-masthead
+  .container
+    form.form-signin.col-lg-3(name="login" method="get",action="/users")
+      h1.form-signin-heading.text-muted Sign In
+      input.form-control(type='text', name="uname" , placeholder='User Name', required='', autofocus='')
+      input.form-control(type='password',name="pwd" , placeholder='Password', required='')
+      button.btn.btn-lg.btn-primary.btn-block(type='submit')
+        | Sign In

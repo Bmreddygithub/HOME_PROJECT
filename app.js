@@ -8,7 +8,13 @@ var db=require('./ds/connect'), users=require("./database/users");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
-
+var session = require('client-sessions');
+app.use(session({
+  cookieName: 'session',
+  secret: 'random_string_goes_here',
+  duration: 30 * 60 * 1000,
+  activeDuration: 5 * 60 * 1000,
+}));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
